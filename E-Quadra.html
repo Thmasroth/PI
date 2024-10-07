@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Diogo, Gustavo e Richart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    <title>E-Quadra</title>
+</head>
+<body class="body-estendido">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="E-Quadra.html">Início</a></li>
+                <li><a href="Contato.html">Contato</a></li>
+                <li><a href="Parcerias.html">Parceria</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        function toggleForm() {
+            const loginForm = document.getElementById('loginForm');
+            const cadastroForm = document.getElementById('cadastroForm');
+            const toggleButton = document.getElementById('toggleButton');
+
+            if (loginForm.classList.contains('hidden')) {
+                loginForm.classList.remove('hidden');
+                cadastroForm.classList.add('hidden');
+                toggleButton.textContent = 'Não possui uma conta? Cadastre-se';
+            } else {
+                loginForm.classList.add('hidden');
+                cadastroForm.classList.remove('hidden');
+                toggleButton.textContent = 'Já possui uma conta? Faça login';
+            }
+        }
+    </script>
+    <div class="auth-container">
+        <h2 id="formTitle">Login</h2>
+
+        <!-- Formulário de Login -->
+        <form id="loginForm">
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+
+        <!-- Formulário de Cadastro -->
+        <form id="cadastroForm" class="hidden">
+            <input type="text" placeholder="Nome completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <!-- Botão para alternar entre Login e Cadastro -->
+        <button type="button" class="toggle-btn" id="toggleButton" onclick="toggleForm()">Não possui uma conta? Cadastre-se</button>
+    </div>
+        <footer>
+            <p>Todos os direitos reservados©. 2024</p>
+        </footer>
+</body>
+</html>
